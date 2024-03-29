@@ -8,21 +8,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        // INPUT: CANTIDAD DE NUMEROS.
         System.out.println("¿Que cantidad de números desea ingresar?");
         Scanner input = new Scanner(System.in);
         int tamanio = input.nextInt();
 
+        // CHEQUEO QUE LA CANTIDA DE NUMEROS A INGRESAR SEA POSITIVA.
         while (tamanio < 0){
             System.out.println("La cantidad de números a ingresar debe ser positiva...");
             tamanio = input.nextInt();
         }
-
         Integer[] arrayNumeros = new Integer[tamanio];
 
-        System.out.println("CHEQUEO TAMAÑO ARRAY: "+arrayNumeros.length);
-
+        // INPUT DE NUMEROS.
         System.out.println("Ingrese los números uno a uno...");
-
         for (int i = 0; i < arrayNumeros.length; i++) {
             Scanner teclado = new Scanner(System.in);
             int numero = teclado.nextInt();
@@ -34,17 +33,15 @@ public class Main {
             arrayNumeros[i] = numero;
         }
 
-       System.out.println("-------------------------------------");
-
-        System.out.println("Los números ingresados son: ");
+        // RECORRO EL ARRAY Y CON UN CONTADOR REGISTRO LA CANTIDAD DE POSICIONES [I] MAYORES A CINCO.
         int contador = 0;
 
         for (int i = 0; i < arrayNumeros.length; i++) {
-            System.out.print(arrayNumeros[i]+" ");
             if (arrayNumeros[i] > 5){
                 contador += 1;
             }
         }
-        System.out.println("\nLa cantidad de números mayores a 5 es: "+contador);
+        // OUTPUT:
+        System.out.println("\nLa cantidad de números MAYORES a 5 es: "+contador);
     }
 }
